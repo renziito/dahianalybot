@@ -18,9 +18,7 @@ bot.on('ready', function (evt) {
 bot.login(process.env.TOKEN);
 
 bot.on('message', function(msg){
-  logger.info(msg.content.substring(0, 2));
   if (msg.content.substring(0, 2) == 'd!') {
-    
     var args = msg.content.substr(msg.content.indexOf(" ") + 1);;
     var cmd = msg.content.substring(2).split(' ')[0];
     
