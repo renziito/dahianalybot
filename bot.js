@@ -20,9 +20,41 @@ bot.login(process.env.TOKEN);
 bot.on('message', function(msg){
   logger.info(msg.content.substring(0, 2));
   if (msg.content.substring(0, 2) == 'd!') {
-    if (msg.content === 'ping') {
-      msg.reply('pong');
-    }
+    
+    var args = msg.content.substr(msg.content.indexOf(" ") + 1);;
+    var cmd = msg.content.substring(2).split(' ')[0];
+    
+    switch(cmd) {
+          case 'ping':
+            msg.channel.send("Pong!");
+            break;
+            
+          case 'duele':
+            msg.reply("Me dueles, me hieres, me lastimas!");
+            break;
+               
+          case 'fuerte':
+            msg.channel.send("Ay que Fuerte!");
+            break;
+                
+          case 'amo':
+            msg.channel.send("Amo su inocencia 17 años");
+            break;
+                 
+          case 'redes':
+            msg.channel.send("¡Sígueme en mis RRSS! (´∀`ゞ ❤ instagram.com/dahianaly ❤ facebook.com/dahianaly ❤ twitter.com/dahianaly");
+            break;
+            
+          case 'cumple':
+            msg.channel.send("¡Feliz cumpleaños "+ args +" !");
+            break;  
+            
+          case 'say':
+            //Dango Moderador
+            msg.channel.send(args);
+            break;
+         }
+
   }
 });
 
