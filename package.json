@@ -6,9 +6,9 @@
   "author": "Renziito",
   "scripts": {
     "start": "node bot.js"
-  }, 
+  },
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^11.5.1",
     "winston": "^3.2.1",
     "express": "^4.15.5"
   }

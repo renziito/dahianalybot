@@ -8,17 +8,24 @@ logger.add(new logger.transports.Console, {
 
 logger.level = 'debug';
 
-var bot = new Discord.Client({
-   token: process.env.TOKEN,
-   autorun: true
-});
+var bot = new Discord.Client();
 
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: '+bot.username + ' - (' + bot.id + ')');
 });
 
-bot.on('message', function (user, userID, channelID, message, evt) {
+bot.login(process.env.TOKEN);
+
+bot.on('message', msg => {
+  if (msg.substring(0, 2) == 'd!') {
+    if (msg.content === 'ping') {
+      msg.reply('pong');
+    }
+  }
+});
+
+bot.on('load', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 2) == 'd!') {
         var args = message.substr(message.indexOf(" ") + 1);;
         var cmd = message.substring(2).split(' ')[0];
