@@ -24,7 +24,7 @@ bot.on('message', function(msg){
     var args = msg.content.substr(msg.content.indexOf(" ") + 1);;
     var cmd = msg.content.substring(2).split(' ')[0];
     
-    if(args!='d!'+cmd){args = args}else{args = ""};
+    args= args=='d!'+cmd?"":args;
     
     switch(cmd) {
           case 'ping':
@@ -50,11 +50,9 @@ bot.on('message', function(msg){
           case 'cumple':
             const embed = new Discord.RichEmbed()
                   .setTitle("¡Feliz Cumpleaños!!")
-                  //.setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
                   .setColor(0x00AE86)
                   .setDescription(args + "te deseamos un muy feliz cumpleaños!! Pasala genial!!.")
                   .setImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fcumple.gif?v=1563915113443")
-        
             msg.channel.send(embed);
             break;  
             
