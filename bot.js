@@ -17,8 +17,9 @@ bot.on('ready', function (evt) {
 
 bot.login(process.env.TOKEN);
 
-bot.on('message', msg => {
-  if (msg.substring(0, 2) == 'd!') {
+bot.on('message', function(msg){
+  logger.info(msg.content.substring(0, 2));
+  if (msg.content.substring(0, 2) == 'd!') {
     if (msg.content === 'ping') {
       msg.reply('pong');
     }
