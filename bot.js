@@ -1,4 +1,4 @@
-var Discord = require('discord.io');
+var Discord = require('discord.js');
 var logger = require('winston');
 
 logger.remove(logger.transports.Console);
@@ -22,9 +22,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 2) == 'd!') {
         var args = message.substr(message.indexOf(" ") + 1);;
         var cmd = message.substring(2).split(' ')[0];
-        var serverID = evt.d.guild_id;
-        var isMod = bot.servers[serverID].members[userID].roles.includes('603231899279949846');
-      
+              
         logger.info(cmd);
             
         switch(cmd) {
