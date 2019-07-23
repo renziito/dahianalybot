@@ -10,13 +10,13 @@ logger.level = 'debug';
 
 var bot = new Discord.Client();
 
-bot.on('ready', function () {
+bot.on('ready', ()=> {
     logger.info('Connected');
 });
 
 bot.login(process.env.TOKEN);
 
-bot.on('message', function(msg){
+bot.on('message', (msg)=>{
   if (msg.content.substring(0, 2) == 'd!') {
     var args = msg.content.substr(msg.content.indexOf(" ") + 1);;
     var cmd = msg.content.substring(2).split(' ')[0];
