@@ -10,9 +10,8 @@ logger.level = 'debug';
 
 var bot = new Discord.Client();
 
-bot.on('ready', function (evt) {
+bot.on('ready', function () {
     logger.info('Connected');
-    logger.info('Logged in as: '+bot.username + ' - (' + bot.id + ')');
 });
 
 bot.login(process.env.TOKEN);
