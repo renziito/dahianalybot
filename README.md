@@ -13,6 +13,7 @@ Anteponer d!
 |Comando|Parametro  |Resultado |
 |--|--|--|
 |ping  |  |pong |
+|avatar | usuario | Devuelve el avatar del usuario |
 |cumple | usuario | Saludo de cumpleaños |
 | amo |  | Mensaje de amor |
 | duele |  | Mensaje de dolor |
