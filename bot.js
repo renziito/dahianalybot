@@ -48,7 +48,14 @@ bot.on('message', function(msg){
             break;
             
           case 'cumple':
-            msg.channel.send("¡Feliz cumpleaños "+ args +" !");
+            const embed = new Discord.RichEmbed()
+                  .setTitle("¡Feliz Cumpleaños!!")
+                  //.setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
+                  .setColor(0x00AE86)
+                  .setDescription(args + "te deseamos un muy feliz cumpleaños!! Pasala genial!!.")
+                  .setImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fcumple.gif?v=1563915113443")
+        
+            msg.channel.send(embed);
             break;  
             
           case 'say':
