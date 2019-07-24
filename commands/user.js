@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const moment = require("moment");
+const tz= require("moment-timezone");
 
 module.exports.run =async (bot, message, args) => {
     let inline = true
@@ -20,9 +21,9 @@ module.exports.run =async (bot, message, args) => {
       bot = "🙅 No";
     }
   
-  console.log(member.user);
+  moment.locale('es');
   
-  let fecha = moment(member.user.username).format("dddd, MMMM Do YYYY, h:mm:ss a");
+  let fecha = moment(member.user.createdAt).format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
         .setAuthor(member.user.username)
@@ -32,8 +33,8 @@ module.exports.run =async (bot, message, args) => {
         .addField("Estado", `${status[member.user.presence.status]}`, inline, true)
         .addField("Nickname", `${member.nickname !== null ? `👍 ${member.nickname}` : "🙅 No tiene"}`, true)
         .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "🙅 Sin Roles"}`, true)
-        .addField("Se unio a la familia: ", member.user.createdAt)
-        .setFooter(`Información de ${fecha}`)
+        .addField("Se unio a la familia: ", fecha)
+        .setFooter(`Información de ${member.user.username}`)
         .setTimestamp()
 
     message.channel.send(embed);
