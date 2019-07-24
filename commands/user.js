@@ -23,6 +23,8 @@ module.exports.run =async (bot, message, args) => {
   
   moment.locale('es');
   
+  console.log(member.user.joinedAt);
+  
   let fecha = moment(member.user.joinedAt).tz('America/Lima').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
@@ -33,8 +35,7 @@ module.exports.run =async (bot, message, args) => {
         .addField("Estado", `${status[member.user.presence.status]}`, inline, true)
         .addField("Nickname", `${member.nickname !== null ? `👍 ${member.nickname}` : "🙅 No tiene"}`, true)
         .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "🙅 Sin Roles"}`, true)
-        .addField("Se unio a la familia: ", fecha)
-        .setTimestamp()
+        .addField("Se unio a la familia: ", fecha);
 
     message.channel.send(embed);
 }
