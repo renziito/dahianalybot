@@ -8,14 +8,11 @@ module.exports.run = async (bot, message, args) => {
   const client = new MongoClient(uri, { useNewUrlParser: true });
   
   client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
+    const collection = client.db("dango").collection("ranks");
+    console.log(collection);
     client.close();
   });
 
-  
-  
-  message.channel.send('¡Sígueme en mis RRSS! (´∀`ゞ ❤ instagram.com/dahianaly ❤ facebook.com/dahianaly ❤ twitter.com/dahianaly')
   message.delete();
 }
 module.exports.help = {
