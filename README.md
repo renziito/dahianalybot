@@ -14,15 +14,15 @@ Anteponer d!
 |--|--|--|
 | amo |  | Mensaje de amor |
 |avatar | usuario | Devuelve el avatar del usuario |
-|ping  |  |pong |
-
 |bola8 | pregunta | Responde la respuesta de la Bola 8 |
 |cumple | usuario | Saludo de cumpleaños |
-|fortnite | username | Muestra la info del user de fornite |
-
 | duele |  | Mensaje de dolor |
-| redes |  | Mensaje de dolor |
+|fortnite | username | Muestra la info del user de fornite |
 | fuerte |  | Ay que fuerte |
+|ping  |  |pong |
+| redes |  | Mensaje de dolor |
+
+
 
 
 Made by [Renziito](mailto:sepia.aki@gmail.com)
