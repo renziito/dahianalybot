@@ -10,7 +10,7 @@ Commandos
 ------------
 PREFIJO  d!
 
-|Comando|Parametro  |Resultado |
+|**Comando**|**Parametro**  |**Resultado** |
 |--|--|--|
 | amo |  | Mensaje de amor |
 |avatar | usuario | Devuelve el avatar del usuario |
