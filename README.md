@@ -23,11 +23,11 @@ PREFIJO  d!
 | redes |  | Mensaje de dolor |
 
 
-Agregalo a tus servers [por aqui]()
+Agregalo a tus servers [por aqui](https://discordapp.com/oauth2/authorize?&client_id=603014898469044226&scope=bot&permissions=523328)
+-------------------
 
 
 
 Made by [Renziito](mailto:sepia.aki@gmail.com)
--------------------
 
 \ ( ゜o゜)ノ
