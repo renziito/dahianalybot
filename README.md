@@ -12,12 +12,14 @@ Anteponer d!
 
 |Comando|Parametro  |Resultado |
 |--|--|--|
-|ping  |  |pong |
+| amo |  | Mensaje de amor |
 |avatar | usuario | Devuelve el avatar del usuario |
+|ping  |  |pong |
+
 |bola8 | pregunta | Responde la respuesta de la Bola 8 |
 |cumple | usuario | Saludo de cumpleaños |
 |fortnite | username | Muestra la info del user de fornite |
-| amo |  | Mensaje de amor |
+
 | duele |  | Mensaje de dolor |
 | redes |  | Mensaje de dolor |
 | fuerte |  | Ay que fuerte |
