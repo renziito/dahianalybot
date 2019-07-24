@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const moment = require("moment");
 
 module.exports.run =async (bot, message, args) => {
     let inline = true
@@ -16,19 +17,23 @@ module.exports.run =async (bot, message, args) => {
     if (member.user.bot === true) {
       bot = "🤖 Si";
     } else {
-      bot = "<:user:424958082691629057> No";
+      bot = "🙅 No";
     }
+  
+  console.log(member.user);
+  
+  let fecha = moment(member.user.username).format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
         .setAuthor(member.user.username)
         .setThumbnail((target.displayAvatarURL))
         .setColor("#00ff00")
         .addField("Username", `${member.user.tag}`, inline)
-        .addField("Nickname", `${member.nickname !== null ? `👍 ${member.nickname}` : "🙅 No tiene"}`, true)
         .addField("Estado", `${status[member.user.presence.status]}`, inline, true)
+        .addField("Nickname", `${member.nickname !== null ? `👍 ${member.nickname}` : "🙅 No tiene"}`, true)
         .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "🙅 Sin Roles"}`, true)
-        .addField("Se unio a Joined ", member.user.createdAt)
-        .setFooter(`Información de ${member.user.username}`)
+        .addField("Se unio a la familia: ", member.user.createdAt)
+        .setFooter(`Información de ${fecha}`)
         .setTimestamp()
 
     message.channel.send(embed);
