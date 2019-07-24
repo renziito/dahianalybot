@@ -22,6 +22,7 @@ PREFIJO  d!
 |gif | tags-separado-con-guion | Retorna un gif con el tag buscado |
 |ping  |  |pong |
 | redes |  | Mensaje de dolor |
+|user | usuario | Devuelve infomación del usuario |
 
 
 Agregalo a tus servers [por aqui](https://discordapp.com/oauth2/authorize?&client_id=603014898469044226&scope=bot&permissions=523328)
