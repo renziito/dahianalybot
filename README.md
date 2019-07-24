@@ -14,7 +14,9 @@ Anteponer d!
 |--|--|--|
 |ping  |  |pong |
 |avatar | usuario | Devuelve el avatar del usuario |
+|bola8 | pregunta | Responde la respuesta de la Bola 8 |
 |cumple | usuario | Saludo de cumpleaños |
+|fortnite | username | Muestra la info del user de fornite |
 | amo |  | Mensaje de amor |
 | duele |  | Mensaje de dolor |
 | redes |  | Mensaje de dolor |

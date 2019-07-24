@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   const ball = bot.emojis.find(emoji => emoji.name === "8ball");
   
   let ballembed = new Discord.RichEmbed()
-  .setAuthor(`\:8ball: Te responde ` + message.author.username)
+  .setAuthor("🎱 Te responde " + message.author.username)
   .setColor("#00ff00")
   .addField("Pregunta", question)
   .addField("Respuesta", replies[result]);
