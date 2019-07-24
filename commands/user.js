@@ -24,11 +24,6 @@ module.exports.run =async (bot, message, args) => {
   
   moment.locale('es');
   
-  
-  
-  console.log(guildMember.joinedAt);
-  console.log(guildMember.joinedTimestamp);
-  
   let fecha = moment(guildMember.joinedAt).tz('America/Lima').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
