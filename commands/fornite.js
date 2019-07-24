@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
   let username = args.join(` `)
   if(!username) return message.channel.send("Uso: `d!fortnite <username>`")
   let platform = args[1];
-  let data = ft.getInfo(username).then(data=>{
-    let stats = data.lifetimeStats;
+  let data = ft.user(username,platform).then(data=>{
+    let stats = data.stats.lifetime;
     let kills = stats.find(s => s.stat == "kills");
     let wins = stats.find(s => s.stat == "wins");
     let top5s = stats.find(s => s.stat == "top5s");
