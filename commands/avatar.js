@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setImage(mentionedUser.displayAvatarURL)
         .setColor("00ff00")
         .setTitle("Avatar")
-        .setFooter("Pedido Por" + message.author.tag)
+        .setFooter("Pedido Por " + message.author.tag)
         .setDescription("[Avatar URL link]("+mentionedUser.displayAvatarURL+")");
 
         message.channel.send(embed)
