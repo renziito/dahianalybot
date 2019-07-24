@@ -19,6 +19,7 @@ PREFIJO  d!
 | duele |  | Mensaje de dolor |
 |fortnite | username | Muestra la info del user de fornite |
 | fuerte |  | Ay que fuerte |
+|gif | tags-separado-con-guion | Retorna un gif con el tag buscado |
 |ping  |  |pong |
 | redes |  | Mensaje de dolor |
 
