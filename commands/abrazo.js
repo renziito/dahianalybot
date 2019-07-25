@@ -4,17 +4,17 @@ const superagent = require("superagent");
 module.exports.run = async (bot, message, args) => {
    let { body } = await superagent.get("https://firefiles.herokuapp.com/hug")
    let link = body.url 
-   let target = message.mentions.users.first() || message.author
+   let target = message.mentions.users.first();
    let msg = " ";
   
    if (target){
-     msg = 
+     msg = message.author.username+" le dio un abrazo a "+target.username+" owo"
    }else{
-     msg = "Ten un abrazo de mi parte, " +message.author+" OwO"
+     msg = "Ten un abrazo de mi parte, " +message.author.username+" OwO"
    }
    
    const embed = new Discord.RichEmbed() 
-      .setDescription(message.author+" ha empezado a fumar.")
+      .setDescription(msg)
       .setColor("RANDOM")
       .setImage(link)
       .setFooter("Powered by: FireFiles")

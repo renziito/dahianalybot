@@ -27,7 +27,7 @@ module.exports.run =async (bot, message, args) => {
   let fecha = moment(guildMember.joinedAt).tz('America/Lima').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
-        .setAuthor("Información de "+ member.user.username)
+        .setAuthor("Información de "+ target.username)
         .setThumbnail((target.displayAvatarURL))
         .setColor("#00ff00")
         .addField("Estado", `${status[member.user.presence.status]}`, inline, true)
