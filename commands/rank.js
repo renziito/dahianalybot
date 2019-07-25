@@ -9,7 +9,8 @@ module.exports.run = async (bot, message, args) => {
   
   client.connect(err => {
     const collection = client.db("dango").collection("ranks");
-    console.log(collection);
+    let 
+    console.log(collection.db);
     client.close();
   });
 
