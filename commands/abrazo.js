@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
    let msg = " ";
   
    if (target){
-     msg = message.author.username+" le dio un abrazo a "+target.username+" owo"
+     msg = message.author.username+" le dio un abrazo a "+target.username+" OwO"
    }else{
      msg = "Ten un abrazo de mi parte, " +message.author.username+" OwO"
    }

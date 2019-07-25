@@ -14,7 +14,6 @@ module.exports.run =async (bot, message, args) => {
 
   const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
   const guildMember = message.guild.members.get(member.user.id);
-  let target = message.mentions.users.first() || message.author
 
   if (member.user.bot === true) {
     bot = "🤖 Si";
@@ -27,8 +26,8 @@ module.exports.run =async (bot, message, args) => {
   let fecha = moment(guildMember.joinedAt).tz('America/Lima').format("dddd, MMMM Do YYYY, h:mm:ss a");
 
     let embed = new Discord.RichEmbed()
-        .setAuthor("Información de "+ target.username)
-        .setThumbnail((target.displayAvatarURL))
+        .setAuthor("Información de "+ member.user.username)
+        .setThumbnail((member.user.displayAvatarURL))
         .setColor("#00ff00")
         .addField("Estado", `${status[member.user.presence.status]}`, inline, true)
         .addField("Nickname", `${member.nickname !== null ? `👍 ${member.nickname}` : "🙅 No tiene"}`, true)
