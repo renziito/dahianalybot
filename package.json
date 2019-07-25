@@ -15,8 +15,9 @@
     "fortnite": "^4.3.2",
     "giphy-api": "^2.0.1",
     "moment": "^2.24.0",
-    "moment-timezone" : "^0.5.26",
-    "mongodb":"^3.2.1",
-    "assert":"^2.0.0"
+    "moment-timezone": "^0.5.26",
+    "mongodb": "^3.2.7",
+    "assert": "^2.0.0",
+    "superagent": "^5.1.0"
   }
 }
