@@ -12,6 +12,7 @@ PREFIJO  d!
 
 |**Comando**|**Parametro**  |**Resultado** |
 |--|--|--|
+|abrazo | usuario | Da un abrazo al usuario etiquetado|
 | amo |  | Mensaje de amor |
 |avatar | usuario | Devuelve el avatar del usuario |
 |bola8 | pregunta | Responde la respuesta de la Bola 8 |
@@ -20,6 +21,7 @@ PREFIJO  d!
 |fortnite | username | Muestra la info del user de fornite |
 | fuerte |  | Ay que fuerte |
 |gif | tags-separado-con-guion | Retorna un gif con el tag buscado |
+|pepe  |  |Te devuelve un pepe |
 |ping  |  |pong |
 | redes |  | Mensaje de dolor |
 |user | usuario | Devuelve infomación del usuario |
