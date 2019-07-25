@@ -24,7 +24,11 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail("https://oraculoastral.com/wp-content/uploads/2019/04/"+signo+".jpg")
     .setDescription("Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno)
     .setColor("RANDOM")
-    .setImage("https://cdn.discordapp.com/emojis/428556326482739230.png?v=1")
+    .addField("Amor : ", horoscopo.amor, false)
+    .addField("Salud : ", horoscopo.salud, false)
+    .addField("Dinero : ", horoscopo.dinero, false)
+    .addField("Color : ", horoscopo.color, true)
+    .addField("Numero : ", horoscopo.numero, true)
     .setFooter("Fuente ["+body.autor+"]("+body.fuente+")")
 
   message.channel.send(embed) 
