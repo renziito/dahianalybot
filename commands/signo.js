@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   let horoscopo = body.horoscopo[signo];
   
   if(typeof(horoscopo) === "undefined"){
-    message.channel.send('🔮 Estas seguro que '+signo+'es un signo? 🔮')
+    message.channel.send('🔮 Estas seguro que '+signo+' es un signo? 🔮')
     return;
   }
   
