@@ -14,9 +14,9 @@ module.exports.run = (bot, message, args) => {
     term = args.join(" ");
   }
   
-  giphy.random(term).then(function (res) {
-    console.log(res);
-    let id = res.data[0].id
+  giphy.search(term).then(function (res) {
+    let index = Math.floor(Math.random() * res.pagination.count);
+    let id = res.data[index].id
     let msgurl = `https://media.giphy.com/media/${id}/giphy.gif`
     const embed = {
       "title":"Tenga su gif "+ message.author.username,
@@ -37,7 +37,7 @@ module.exports.run = (bot, message, args) => {
         },
         {
           "name": "URL de la Pagina",
-          "value": "[Giphy](" + res.data[0].url + ")",
+          "value": "[Giphy](" + res.data[index].url + ")",
           "inline": true
         }
       ]
