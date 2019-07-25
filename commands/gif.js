@@ -14,7 +14,8 @@ module.exports.run = (bot, message, args) => {
     term = args.join(" ");
   }
   
-  giphy.search(term).then(function (res) {
+  giphy.random(term).then(function (res) {
+    console.log(res);
     let id = res.data[0].id
     let msgurl = `https://media.giphy.com/media/${id}/giphy.gif`
     const embed = {
