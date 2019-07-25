@@ -8,10 +8,20 @@ module.exports.run = async (bot, message, args) => {
     return;
   }
   
+  let signo = args.toString();
+  
   let { body } = await superagent.get("https://api.adderou.cl/tyaas")
   let day = body.titulo;
-  let signo = body.
-  let link = body.url 
+  let horoscopo = body.horoscopo.find((signo)=>{
+    return body.horoscopo[signo]
+  });
+  
+  console.log(day);
+  console.log(signo);
+  console.log(horoscopo);
+  return;
+  
+  let link = body.url.args[0] 
   let target = message.mentions.users.first();
   let msg = " ";
 
