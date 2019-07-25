@@ -3,7 +3,7 @@ const giphy = require('giphy-api')("W8g6R14C0hpH6ZMon9HV9FTqKs4o4rCk");
 
 module.exports.run = (bot, message, args) => {
   if (args.length === 0) {
-    message.channel.send('No Seacrh terms!')
+    message.channel.send('Sin tags no puedo mostrar nada')
     return;
   }
   
