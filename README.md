@@ -16,6 +16,7 @@ PREFIJO  d!
 | amo |  | Mensaje de amor |
 |avatar | usuario | Devuelve el avatar del usuario |
 |bola8 | pregunta | Responde la respuesta de la Bola 8 |
+|calc | Operacion a evaluar | Returna de la evaluacion de la operacion |
 |cumple | usuario | Saludo de cumpleaños |
 | duele |  | Mensaje de dolor |
 |fortnite | username | Muestra la info del user de fornite |

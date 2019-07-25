@@ -3,7 +3,7 @@ const Math = require("math-expression-evaluator");
 
 module.exports.run = async (bot, message, args) => {
   if (args.length === 0) {
-    message.channel.send('Nada que evaluar')
+    message.channel.send('🤖 ERROR : SYNTAX ERROR 🤖 : Nada que evaluar')
     return;
   }
   
@@ -15,11 +15,11 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send("🤖 ERROR : SYNTAX ERROR 🤖 Bop bep bop");
   }
 
-  const embed = new Discord.MessageEmbed()
-    .setDescription(`**${lang.calculator_calculation}**\n\`\`\`\n${mathEquation}\n\`\`\` **${lang.calculator_result}**\n\`\`\`\n${answer}\n\`\`\``)
-    .setAuthor(`${msg.author.tag}`, msg.author.displayAvatarURL())
+  const embed = new Discord.RichEmbed()
+    .setDescription(`**Calculando :**\n\`\`\`\n${mathEquation}\n\n\`\`\` **Resultado:**\n\`\`\`\n${answer}\n\`\`\``)
     .setColor('#0066CC');
-  message.channel.send({ embed });
+  
+  message.channel.send(embed);
   
 }
 module.exports.help = {
