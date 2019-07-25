@@ -1,24 +1,17 @@
 const Discord = require('discord.js');
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
 
 module.exports.run = async (bot, message, args) => {
   
-  var logger = require('winston');
-  logger.info(message.client.rest.client)
-   message.delete();
-  return;
-  
-  const uri = "mongodb+srv://dahianalybot:sarabia@dahianalybot-lgufd.mongodb.net/test?retryWrites=true&w=majority";
-  const client = new MongoClient(uri, { useNewUrlParser: true });
-  
-  client.connect(err => {
-    const collection = client.db("dango").collection("ranks");
-    let target = message.author.id;
-    console.log(collection.db[target]);
-    client.close();
-  });
+  const user1 = message.mentions.users.first() || message.author;
+  const embed = new Discord.MessageEmbed()
+    .setColor('#A4F2DF')
+    .setThumbnail(user1.avatarURL())
+    .setAuthor(user1.tag, user1.avatarURL());
 
+  let allMembersArray = [];
+  let rank = 0;
+
+  const scoresOfAllMembers = await message.client.provider.getGuild(message.guild.id, 'scores');
   message.delete();
 }
 module.exports.help = {
