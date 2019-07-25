@@ -19,25 +19,15 @@ module.exports.run = async (bot, message, args) => {
     return;
   }
   
-  const embed = {
-      "title":"Horoscopo para "+signo+' del dia '+day,
-      "color": "RANDOM",
-      "footer": {
-        "text": "Fuente ["+body.autor+"]("+body.fuente+")"
-      },
-      "description":{
-        "text":"Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno
-      },
-      "fields": [
-        {
-          "name": "Se busco : ",
-          "value": "`" + signo + "`",
-          "inline": true
-        }
-      ]
-    };
+  const embed = new Discord.RichEmbed()
+    .setAuthor("Horoscopo para "+signo+" del dia "+day)
+    .setThumbnail("https://oraculoastral.com/wp-content/uploads/2019/04/"+signo+".jpg")
+    .setDescription("Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno)
+    .setColor("RANDOM")
+    .setImage("https://cdn.discordapp.com/emojis/428556326482739230.png?v=1")
+    .setFooter("Fuente ["+body.autor+"]("+body.fuente+")")
 
-  message.channel.send({embed}) 
+  message.channel.send(embed) 
 }
 module.exports.help = {
   name: "signo"
