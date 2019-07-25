@@ -21,37 +21,23 @@ module.exports.run = async (bot, message, args) => {
   
   const embed = {
       "title":"Horoscopo para "+signo+' del dia '+day,
-      "color": 3066993,
-      "timestamp": new Date(),
+      "color": "RANDOM",
       "footer": {
-        "icon_url": "https://raw.githubusercontent.com/Giphy/GiphyAPI/f68a8f1663f29dd9e8e4ea728421eb2977e42d83/api_giphy_logo_sparkle_clear.gif",
-        "text": "Powered by Giphy"
+        "text": "Fuente ["+body.autor+"]("+body.fuente+")"
       },
-      "image": {
-        "url": msgurl
+      "description":{
+        "text":"Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno
       },
       "fields": [
         {
           "name": "Se busco : ",
-          "value": "`" + term + "`",
-          "inline": true
-        },
-        {
-          "name": "URL de la Pagina",
-          "value": "[Giphy](" + res.data[index].url + ")",
+          "value": "`" + signo + "`",
           "inline": true
         }
       ]
     };
-  
-  
-  const embed = new Discord.RichEmbed() 
-    .setAuthor("Horoscopo para "+signo+' del dia'+day)
-    .setDescription("Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno)
-    //.addField("Estado", `${status[member.user.presence.status]}`, true, true)
-    .setColor("RANDOM")
-    .setFooter("Fuente ["+body.autor+"]("+body.fuente+")")
-  message.channel.send(embed) 
+
+  message.channel.send({embed}) 
 }
 module.exports.help = {
   name: "signo"
