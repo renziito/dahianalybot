@@ -25,6 +25,7 @@ PREFIJO  d!
 |pepe  |  |Te devuelve un pepe |
 |ping  |  |pong |
 | redes |  | Mensaje de dolor |
+|signo | signo | Devuelve el horoscopo para hoy de tu signo |
 |user | usuario | Devuelve infomación del usuario |
 
 
