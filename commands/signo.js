@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Dinero : ", horoscopo.dinero, false)
     .addField("Color : ", horoscopo.color, true)
     .addField("Numero : ", horoscopo.numero, true)
-    .setFooter("Fuente ["+body.autor+"]("+body.fuente+")")
+    .setFooter("Fuente : "+body.autor)
 
   message.channel.send(embed) 
 }

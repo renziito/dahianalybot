@@ -3,10 +3,10 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
   
   const user1 = message.mentions.users.first() || message.author;
-  const embed = new Discord.MessageEmbed()
+  const embed = new Discord.RichEmbed()
     .setColor('#A4F2DF')
-    .setThumbnail(user1.avatarURL())
-    .setAuthor(user1.tag, user1.avatarURL());
+    .setThumbnail(user1.displayAvatarURL)
+    .setAuthor(user1.tag, user1.displayAvatarURL);
 
   let allMembersArray = [];
   let rank = 0;
