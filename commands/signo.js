@@ -12,30 +12,45 @@ module.exports.run = async (bot, message, args) => {
   
   let { body } = await superagent.get("https://api.adderou.cl/tyaas")
   let day = body.titulo;
-  let horoscopo = body.horoscopo.find((signo)=>{
-    return body.horoscopo[signo]
-  });
+  let horoscopo = body.horoscopo[signo];
   
-  console.log(day);
-  console.log(signo);
-  console.log(horoscopo);
-  return;
-  
-  let link = body.url.args[0] 
-  let target = message.mentions.users.first();
-  let msg = " ";
-
-  if (target){
-   msg = message.author.username+" le dio un abrazo a "+target.username+" OwO"
-  }else{
-   msg = "Ten un abrazo de mi parte, " +message.author.username+" OwO"
+  if(typeof(horoscopo) === "undefined"){
+    message.channel.send('🔮 Estas seguro que '+signo+'es un signo? 🔮')
+    return;
   }
-
+  
+  const embed = {
+      "title":"Horoscopo para "+signo+' del dia '+day,
+      "color": 3066993,
+      "timestamp": new Date(),
+      "footer": {
+        "icon_url": "https://raw.githubusercontent.com/Giphy/GiphyAPI/f68a8f1663f29dd9e8e4ea728421eb2977e42d83/api_giphy_logo_sparkle_clear.gif",
+        "text": "Powered by Giphy"
+      },
+      "image": {
+        "url": msgurl
+      },
+      "fields": [
+        {
+          "name": "Se busco : ",
+          "value": "`" + term + "`",
+          "inline": true
+        },
+        {
+          "name": "URL de la Pagina",
+          "value": "[Giphy](" + res.data[index].url + ")",
+          "inline": true
+        }
+      ]
+    };
+  
+  
   const embed = new Discord.RichEmbed() 
-    .setDescription(msg)
+    .setAuthor("Horoscopo para "+signo+' del dia'+day)
+    .setDescription("Este signo corresponde a los nacidos entre : " +horoscopo.fechaSigno)
+    //.addField("Estado", `${status[member.user.presence.status]}`, true, true)
     .setColor("RANDOM")
-    .setImage(link)
-    .setFooter("Powered by: FireFiles")
+    .setFooter("Fuente ["+body.autor+"]("+body.fuente+")")
   message.channel.send(embed) 
 }
 module.exports.help = {

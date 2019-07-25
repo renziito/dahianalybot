@@ -1,4 +1,3 @@
-const Discord = require("discord.js")
 const giphy = require('giphy-api')("W8g6R14C0hpH6ZMon9HV9FTqKs4o4rCk");
 
 module.exports.run = (bot, message, args) => {
