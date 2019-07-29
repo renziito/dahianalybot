@@ -26,12 +26,12 @@ module.exports.run = async (bot, message, args) => {
 		}
 		ctx.putImageData(data, 80, 60);
     
-    ctx.fillText(mentionedUser.username, canvas.width / 2.5, canvas.height / 1.8);
+    ctx.fillText(mentionedUser.username, 110, 170);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
 
-	  return message.channel.send(`Se Murio, ${mentionedUser.username}!`, attachment);
+	  return message.channel.send('', attachment);
   }catch(err) {
     return  message.reply(`Oh no, ocurrio un error: \`${err.message}\`. Intentalo después!`);
   }
