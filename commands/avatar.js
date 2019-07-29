@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
       .setDescription("[Avatar URL link]("+mentionedUser.displayAvatarURL+")");
 
     message.channel.send(embed)
+    msg.delete();
 }
 
 module.exports.help = {

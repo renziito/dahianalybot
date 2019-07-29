@@ -3,7 +3,6 @@ const { createCanvas, loadImage } = require("canvas");
 
 
 module.exports.run = async (bot, message, args) => {
-  message.delete();
   let msg = await message.channel.send("Generando imagen...");
   const mentionedUser = message.mentions.users.first() || message.author;
   const avatarURL = mentionedUser.displayAvatarURL;
@@ -27,7 +26,10 @@ module.exports.run = async (bot, message, args) => {
 		}
 		ctx.putImageData(data, 80, 60);
     
+    ctx.fillText(mentionedUser.username, canvas.width / 2.5, canvas.height / 1.8);
+    
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
+    msg.delete();
 
 	  return message.channel.send(`Se Murio, ${mentionedUser.username}!`, attachment);
   }catch(err) {
