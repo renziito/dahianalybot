@@ -19,6 +19,7 @@
     "mongodb": "^3.2.7",
     "assert": "^2.0.0",
     "superagent": "^5.1.0",
-    "math-expression-evaluator": "^1.2.17"
+    "math-expression-evaluator": "^1.2.17",
+    "canvas": "^2.6.0"
   }
 }
