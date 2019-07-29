@@ -7,18 +7,17 @@ module.exports.run = async (bot, message, args) => {
   const mentionedUser = message.mentions.users.first() || message.author;
   const avatarURL = mentionedUser.displayAvatarURL;
   
-  let argsWithoutMentions = args.filter(arg => !Discord.MessageMentions.USERS_PATTERN.test(arg));
-  
-  let mensaje = "";
+  let mensaje = "1993 - 2019";
 
-  if (argsWithoutMentions.length === 0) {
-    mensaje = "1993 - 2019"; 
-  }else if (argsWithoutMentions.length === 1) {
-    mensaje =  argsWithoutMentions.toString()
-  } else {
-    mensaje =  argsWithoutMentions.join(" ");
+ if (args.length > 1) {
+     let argsWith = args;
+   console.log(args.shift())
+     if(args.shift()==mentionedUser){
+       argsWith.shift();
+     }
+    mensaje =  argsWith.join(" ");
   }
-  
+   
   console.log(mensaje);
   try{
     const base = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Frip.png?v=1564422037717");
@@ -42,7 +41,19 @@ module.exports.run = async (bot, message, args) => {
     ctx.font = "bold 14px sans-serif";
     ctx.textAlign = "center"; 
     ctx.fillText(mentionedUser.username, canvas.width/2, 40);
-    ctx.fillText(mensaje, canvas.width/2, 230);
+    
+    
+    function fillTextMultiLine(ctx, text, x, y) {
+      var lineHeight = ctx.measureText("M").width * 1.2;
+      var lines = text.split("\n");
+      console.log(lines);
+      for (var i = 0; i < lines.length; ++i) {
+        ctx.fillText(lines[i], x, y);
+        y += lineHeight;
+      }
+    }
+    
+    fillTextMultiLine(ctx,mensaje,canvas.width/2, 230);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
