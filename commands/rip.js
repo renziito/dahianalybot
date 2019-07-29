@@ -26,7 +26,10 @@ module.exports.run = async (bot, message, args) => {
 		}
 		ctx.putImageData(data, 80, 60);
     
-    ctx.fillText(mentionedUser.username, 110, 170);
+    ctx.font = "bold 14px sans-serif";
+    ctx.textAlign = "center"; 
+    ctx.fillText(mentionedUser.username, canvas.width/2, 30);
+    ctx.fillText("1993 - 2019", canvas.width/2, 180);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
