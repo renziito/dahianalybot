@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
     ctx.textAlign = "center"; 
     ctx.fillText(mentionedUser.username, canvas.width/2, 40);
        
-    fillTextMultiLine(ctx,mensaje,canvas.width/2, 220);
+    printAtWordWrap(ctx,mensaje,canvas.width/2, 220,19,110);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
@@ -56,6 +56,42 @@ module.exports.run = async (bot, message, args) => {
         y += lineHeight;
       }
     }
+  
+  
+  
+  function printAtWordWrap( context , text, x, y, lineHeight, fitWidth)
+  {
+    fitWidth = fitWidth || 0;
+    
+    if (fitWidth <= 0)
+    {
+        context.fillText( text, x, y );
+        return;
+    }
+    var words = text.split(' ');
+    var currentLine = 0;
+    var idx = 1;
+    while (words.length > 0 && idx <= words.length)
+    {
+        var str = words.slice(0,idx).join(' ');
+        var w = context.measureText(str).width;
+        if ( w > fitWidth )
+        {
+            if (idx==1)
+            {
+                idx=2;
+            }
+            context.fillText( words.slice(0,idx-1).join(' '), x, y + (lineHeight*currentLine) );
+            currentLine++;
+            words = words.splice(idx-1);
+            idx = 1;
+        }
+        else
+        {idx++;}
+    }
+    if  (idx > 0)
+        context.fillText( words.join(' '), x, y + (lineHeight*currentLine) );
+}
   
 }
 module.exports.help = {
