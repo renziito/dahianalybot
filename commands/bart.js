@@ -8,18 +8,16 @@ module.exports.run = async (bot, message, args) => {
   const avatarURL = mentionedUser.displayAvatarURL;
    
   try{
-    const base = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart.jpg?v=1564621965776");
-    const overlay = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart_2.png?v=1564623875291");
+    const base = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart.png?v=1564628927679");
     const avatar = await loadImage(avatarURL);
    
     const canvas = createCanvas(250, 376);
     const ctx = canvas.getContext('2d');
 
-    ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
     ctx.transform(1,-0.1,0,1,0,0);
     ctx.drawImage(avatar, 30, 65, 110, 115);
     ctx.resetTransform();
-    ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
