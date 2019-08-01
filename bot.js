@@ -18,7 +18,7 @@ bot.commands = new Discord.Collection();
 
 bot.on('ready', function() {
   logger.info('Connected');
-  bot.user.setPresence({ game: { name: 'd!info Para mas info' }, status: 'online' })
+  bot.user.setPresence({ game: { name: 'd!info >> Para mas info' }, status: 'online' })
 });
 
 
