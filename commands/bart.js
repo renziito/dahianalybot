@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
    
   try{
     const base = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart.jpg?v=1564621965776");
-    const overlay = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart_2.png?v=1564621974815");
+    const overlay = await loadImage("https://cdn.glitch.com/b9b41fa0-8db5-4aa1-a643-fffac74a54f3%2Fbart_2.png?v=1564623875291");
     const avatar = await loadImage(avatarURL);
    
     const canvas = createCanvas(250, 376);
@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 
     ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
     ctx.transform(1,-0.1,0,1,0,0);
-    ctx.drawImage(avatar, 30, 70, 110, 110);
+    ctx.drawImage(avatar, 30, 65, 110, 115);
     ctx.resetTransform();
     ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
     
