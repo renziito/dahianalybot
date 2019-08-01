@@ -18,7 +18,9 @@ bot.commands = new Discord.Collection();
 
 bot.on('ready', function() {
   logger.info('Connected');
+  bot.user.setPresence({ game: { name: 'd!info Para mas info' }, status: 'online' })
 });
+
 
 fs.readdir("./commands", (err, files) => {
     if(err) console.error(err);
@@ -39,8 +41,6 @@ fs.readdir("./commands", (err, files) => {
 });
 
 bot.login(process.env.TOKEN);
-
-
 
 bot.on("message", async message => {
     if(message.author.bot) return;
