@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
     ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
     
-    ctx.transform(1, .2, .8, 1, 0, 0);
+    ctx.transform(.8, 1, .8, 1, 0, 0);
     ctx.drawImage(avatar, 40, 60, 100, 100);
     
         
