@@ -16,9 +16,10 @@ module.exports.run = async (bot, message, args) => {
 
     ctx.drawImage(base, 0, 0, canvas.width, canvas.height);
     ctx.transform(1,0,0.1,1,0,0);
-    ctx.drawImage(avatar, 40, 44, 80, 90);
+    ctx.drawImage(avatar, 40, 38, 70, 100);
     ctx.resetTransform();
-    ctx.drawImage(avatar, 80, 200, 80, 100);
+    ctx.transform(1,0,-0.35,1,0,0);
+    ctx.drawImage(avatar, 180, 200, 85, 100);
     
     const attachment = new Discord.Attachment(canvas.toBuffer(), 'rip-image.png');
     msg.delete();
